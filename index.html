@@ -8,9 +8,9 @@
     <style>
         body {
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background: linear-gradient(135deg, #141e30 0%, #243b55 100%); /* Premium Dark Blue Theme */
             color: white;
             display: flex;
             flex-direction: column;
@@ -18,128 +18,123 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            gap: 40px;
+            gap: 25px; /* Box ke beech ka gap */
+            box-sizing: border-box;
         }
 
-        /* Pehla Box: Welcome - Screen ke hisab se automatic text size */
+        /* Pehla Box - Sleek aur Patla */
         .card-welcome {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 15px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
-            width: 95%; /* Screen ka 95% hissa lega */
-            max-width: 1200px;
+            width: 100%;
+            max-width: 900px;
+            box-sizing: border-box;
         }
 
-        /* Text ko ek line mein fit rakhne ka naya tareeka */
         h1 {
-            font-size: 5vw; /* Font size screen ki width (vw) ke hisab se bada/chhota hoga */
+            font-size: clamp(1.8rem, 5vw, 3.5rem); /* Screen ke hisab se automatic perfect size */
             margin: 0;
-            letter-spacing: 3px;
-            white-space: nowrap; /* Text ko 2 line mein tutne se rokega */
+            letter-spacing: 2px;
+            white-space: nowrap;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
-        /* Niche wale dono box ka main container */
+        /* Niche wale dono box ka container (Hamesha ek line mein) */
         .bottom-boxes {
             display: flex;
-            flex-direction: row; /* PC par ek hi line mein (bagal mein) rakhega */
-            gap: 30px;
-            width: 95%;
-            max-width: 1000px;
+            flex-direction: row; /* Mobile par bhi box ek hi line mein rahenge */
+            gap: 12px;
+            width: 100%;
+            max-width: 900px;
             justify-content: center;
+            box-sizing: border-box;
         }
 
-        /* Chhote Box ka aam style */
         .small-card {
-            flex: 1; /* Dono box ko barabar jagah milegi */
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            flex: 1; /* Dono box ko barabar jagah */
+            padding: 20px 10px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
         }
 
-        /* Download Box ka Color */
+        /* App Box */
         .card-app {
-            background: rgba(255, 152, 0, 0.15);
-            border: 1px solid rgba(255, 152, 0, 0.4);
+            background: rgba(255, 152, 0, 0.08);
+            border: 1px solid rgba(255, 152, 0, 0.3);
         }
 
-        /* Coming Soon Box ka Color */
+        /* Coming Soon Box */
         .card-soon {
-            background: rgba(0, 198, 255, 0.15);
-            border: 1px solid rgba(0, 198, 255, 0.4);
+            background: rgba(0, 198, 255, 0.08);
+            border: 1px solid rgba(0, 198, 255, 0.3);
         }
 
         h2 {
-            font-size: 1.8em;
-            margin: 0 0 25px 0;
+            font-size: clamp(0.9rem, 3vw, 1.4rem); /* Text bahar na nikle isliye fit size */
+            margin: 0 0 12px 0;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* Button Style */
+        .btn {
+            padding: 8px 12px;
+            font-size: clamp(0.75rem, 2.5vw, 1.1rem);
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: 0.3s ease;
+            white-space: nowrap;
         }
 
         .download-btn {
             background-color: #ff9800;
             color: #000;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
         }
 
         .download-btn:hover {
             background-color: #ffffff;
-            color: #ff9800;
             box-shadow: 0 0 20px #ff9800;
         }
 
-        /* Coming soon button sirf dikhane ke liye (clickable nahi) */
         .soon-btn {
             background-color: transparent;
             color: #00c6ff;
-            border: 2px dashed #00c6ff;
-            padding: 12px 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 30px;
+            border: 1.5px dashed #00c6ff;
             cursor: not-allowed;
-        }
-
-        /* Mobile ki screen ke liye automatic setting */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 7.5vw; /* Mobile par font aur adjust hoga */
-            }
-            .bottom-boxes {
-                flex-direction: column; /* Mobile par box ek ke niche ek aa jayenge */
-            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Box 1: Welcome -->
     <div class="card-welcome">
         <h1>WELCOME TO THE AQ</h1>
     </div>
 
-    <!-- Dono chhote box ka container -->
+    <!-- Box 2 & 3: Ek hi line mein -->
     <div class="bottom-boxes">
         
-        <!-- Box 1: App Download -->
         <div class="small-card card-app">
-            <h2>Download Our App</h2>
-            <a href="TheAQ.apk" download class="download-btn">Download APK</a>
+            <h2>Download App</h2>
+            <a href="TheAQ.apk" download class="btn download-btn">Download APK</a>
         </div>
 
-        <!-- Box 2: Coming Soon -->
         <div class="small-card card-soon">
             <h2>New Feature</h2>
-            <div class="soon-btn">Coming Soon...</div>
+            <div class="btn soon-btn">Coming Soon</div>
         </div>
 
     </div>
