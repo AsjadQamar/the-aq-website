@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AQ</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            gap: 40px;
+        }
+
+        /* Pehla Box: Welcome - Screen ke hisab se automatic text size */
+        .card-welcome {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            width: 95%; /* Screen ka 95% hissa lega */
+            max-width: 1200px;
+        }
+
+        /* Text ko ek line mein fit rakhne ka naya tareeka */
+        h1 {
+            font-size: 5vw; /* Font size screen ki width (vw) ke hisab se bada/chhota hoga */
+            margin: 0;
+            letter-spacing: 3px;
+            white-space: nowrap; /* Text ko 2 line mein tutne se rokega */
+        }
+
+        /* Niche wale dono box ka main container */
+        .bottom-boxes {
+            display: flex;
+            flex-direction: row; /* PC par ek hi line mein (bagal mein) rakhega */
+            gap: 30px;
+            width: 95%;
+            max-width: 1000px;
+            justify-content: center;
+        }
+
+        /* Chhote Box ka aam style */
+        .small-card {
+            flex: 1; /* Dono box ko barabar jagah milegi */
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Download Box ka Color */
+        .card-app {
+            background: rgba(255, 152, 0, 0.15);
+            border: 1px solid rgba(255, 152, 0, 0.4);
+        }
+
+        /* Coming Soon Box ka Color */
+        .card-soon {
+            background: rgba(0, 198, 255, 0.15);
+            border: 1px solid rgba(0, 198, 255, 0.4);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 0 0 25px 0;
+        }
+
+        .download-btn {
+            background-color: #ff9800;
+            color: #000;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+
+        .download-btn:hover {
+            background-color: #ffffff;
+            color: #ff9800;
+            box-shadow: 0 0 20px #ff9800;
+        }
+
+        /* Coming soon button sirf dikhane ke liye (clickable nahi) */
+        .soon-btn {
+            background-color: transparent;
+            color: #00c6ff;
+            border: 2px dashed #00c6ff;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: not-allowed;
+        }
+
+        /* Mobile ki screen ke liye automatic setting */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 7.5vw; /* Mobile par font aur adjust hoga */
+            }
+            .bottom-boxes {
+                flex-direction: column; /* Mobile par box ek ke niche ek aa jayenge */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-welcome">
+        <h1>WELCOME TO THE AQ</h1>
+    </div>
+
+    <!-- Dono chhote box ka container -->
+    <div class="bottom-boxes">
+        
+        <!-- Box 1: App Download -->
+        <div class="small-card card-app">
+            <h2>Download Our App</h2>
+            <a href="TheAQ.apk" download class="download-btn">Download APK</a>
+        </div>
+
+        <!-- Box 2: Coming Soon -->
+        <div class="small-card card-soon">
+            <h2>New Feature</h2>
+            <div class="soon-btn">Coming Soon...</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
