@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The AQ</title>
+
+    <!-- Google Search Description & Site Name SEO -->
+    <meta name="description" content="This is a website that is built by a student.">
+    <meta property="og:site_name" content="The AQ">
+    <meta property="og:title" content="The AQ">
+    <meta property="og:description" content="This is a website that is built by a student.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asjadqamar.github.io/the-aq-website/">
+    <meta property="og:image" content="https://asjadqamar.github.io/the-aq-website/logo.png">
+
+    <!-- Website Logo (Favicon for Browser & Google Search) -->
+    <link rel="icon" type="image/png" sizes="192x192" href="https://asjadqamar.github.io/the-aq-website/logo.png">
+    <link rel="apple-touch-icon" href="https://asjadqamar.github.io/the-aq-website/logo.png">
+
+    <!-- Google Official Site Name Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "The AQ",
+      "url": "https://asjadqamar.github.io/the-aq-website/"
+    }
+    </script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -29,19 +53,21 @@
             align-items: center;
         }
 
-        /* Sabse upar Welcome line - Zero khali jagah */
+        /* Welcome Banner - Upar, Left aur Right side thodi jagah ke sath */
         .welcome-banner {
-            width: 100%;
-            margin: 0;
-            padding: 14px 10px;
+            width: calc(100% - 24px);
+            max-width: 656px;
+            margin: 16px auto 0 auto;
+            padding: 15px 12px;
+            border-radius: 14px;
             background: linear-gradient(90deg, #00c6ff 0%, #0072ff 50%, #6a11cb 100%);
             text-align: center;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
         }
 
         .welcome-banner h1 {
             margin: 0;
-            font-size: clamp(1.15rem, 5vw, 2.6rem);
+            font-size: clamp(1.1rem, 4.8vw, 2.4rem);
             font-weight: 700;
             letter-spacing: 2px;
             white-space: nowrap;
@@ -50,7 +76,7 @@
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Dono Boxes ka Container (Ek hi line mein, compact size) */
+        /* Dono Boxes ka Container */
         .boxes-container {
             display: flex;
             flex-direction: row;
@@ -59,7 +85,7 @@
             gap: 12px;
             width: 100%;
             max-width: 680px;
-            margin-top: 28px;
+            margin-top: 20px;
             padding: 0 12px;
         }
 
@@ -81,13 +107,11 @@
             transform: translateY(-3px);
         }
 
-        /* Box 1: App Download */
         .card-app {
             background: linear-gradient(145deg, rgba(255, 152, 0, 0.16), rgba(255, 87, 34, 0.1));
             border: 1px solid rgba(255, 167, 38, 0.45);
         }
 
-        /* Box 2: Coming Soon (Clickable) */
         .card-soon {
             background: linear-gradient(145deg, rgba(0, 210, 255, 0.16), rgba(138, 43, 226, 0.14));
             border: 1px solid rgba(0, 210, 255, 0.45);
@@ -150,7 +174,6 @@
             to { opacity: 1; }
         }
 
-        /* Page 2 sabse upar wali line - Zero khali jagah */
         .target-banner {
             width: 100%;
             margin: 0;
@@ -170,7 +193,6 @@
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Colorful Contact Card */
         .info-card {
             width: calc(100% - 24px);
             max-width: 560px;
@@ -243,11 +265,17 @@
             background: rgba(255, 255, 255, 0.25);
         }
 
-        /* Chhote Mobile screens ke liye extra compact padding */
+        /* Mobile ke liye compact spacing */
         @media (max-width: 500px) {
+            .welcome-banner {
+                width: calc(100% - 16px);
+                margin: 12px auto 0 auto;
+                padding: 13px 10px;
+                border-radius: 12px;
+            }
             .boxes-container {
                 gap: 8px;
-                margin-top: 20px;
+                margin-top: 14px;
                 padding: 0 8px;
             }
             .card {
@@ -269,13 +297,11 @@
         </div>
 
         <div class="boxes-container">
-            <!-- Box 1: App Download -->
             <div class="card card-app">
                 <h2>The AQ App</h2>
                 <a href="TheAQ.apk" download class="btn btn-download">DOWNLOAD THE AQ APP</a>
             </div>
 
-            <!-- Box 2: Coming Soon (Tap karne par naya page khulega) -->
             <div class="card card-soon" onclick="openInfoPage()">
                 <h2>Coming Soon</h2>
                 <span class="btn btn-soon">OPEN PAGE</span>
